@@ -99,3 +99,12 @@ int main(int argc, char** argv) {
 
 ```
 
+
+## 常见错误与解决方法
+
+1. can't open shared object file: No such file or direction
+
+```
+sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
+sudo ldconfig
+```
