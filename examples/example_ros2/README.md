@@ -9,11 +9,11 @@ ros2 pkg create example_fish_protocol --dependencies rclcpp fish_deploy --node-n
 2.编译
 
 ```
-g++ example_serial.cpp -o example_serial -lfish_protocol -lpthread
+colcon build
 ```
 
 3.执行
 
 ```
-./example_serial
+ros2 run example_fish_protocol example_fish_protocol
 ```

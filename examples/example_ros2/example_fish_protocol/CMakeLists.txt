@@ -18,6 +18,10 @@ target_compile_features(example_fish_protocol PUBLIC c_std_99 cxx_std_17)  # Req
 ament_target_dependencies(
   example_fish_protocol
   "rclcpp"
+
+)
+
+target_link_libraries(example_fish_protocol
   "fish_protocol"
 )
 
