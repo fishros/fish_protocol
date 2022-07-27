@@ -9,7 +9,7 @@ add_compile_options(-std=c++14)
 # 消除boost的note
 add_compile_options(-D=BOOST_BIND_GLOBAL_PLACEHOLDERS)
 # 开启Debug模式
-SET(CMAKE_BUILD_TYPE "DEBUG")
+SET(CMAKE_BUILD_TYPE "RELEASE")
 
 # 添加头文件
 include_directories(
