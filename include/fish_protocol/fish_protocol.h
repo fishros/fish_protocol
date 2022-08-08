@@ -18,6 +18,7 @@
 
 #include "fish_protocol/serial_protocol.h"
 #include "fish_protocol/udp_server_protocol.h"
+#include "fish_protocol/udp_client_protocol.h"
 
 namespace fish_protocol {
 std::shared_ptr<FishProtocol> GetProtocolByConfig(

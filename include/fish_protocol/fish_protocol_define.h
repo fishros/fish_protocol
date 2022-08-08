@@ -18,6 +18,7 @@ namespace fish_protocol {
 enum class PROTOCOL_TYPE : int {
   SERIAL = 0,
   UDP_SERVER,
+  UDP_CLIENT,
   TCP_SERVER,
 };
 

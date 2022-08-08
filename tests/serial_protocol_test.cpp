@@ -9,7 +9,7 @@
 #include "gtest/gtest.h"
 
 TEST(TestSerialCommunicate, ReadData) {
-  using namespace fish_protocol;  // NOLINT
+  using namespace fish_protocol; // NOLINT
   ProtocolConfig proto_config;
   proto_config.protocol_type_ = PROTOCOL_TYPE::SERIAL;
   proto_config.serial_baut_ = 115200;
@@ -22,8 +22,8 @@ TEST(TestSerialCommunicate, ReadData) {
     是返回值类型，body是函数体
   */
   int sum_data = 0;
-  int* sum_data_p = &sum_data;
-  protocol->SetDataRecvCallback([sum_data_p](const std::string& data) -> void {
+  int *sum_data_p = &sum_data;
+  protocol->SetDataRecvCallback([sum_data_p](const std::string &data) -> void {
     *sum_data_p += data.size();
     print_frame_to_hex("frame", data.data(), (uint16_t)data.size());
   });
@@ -33,7 +33,7 @@ TEST(TestSerialCommunicate, ReadData) {
 }
 
 TEST(TestSerialCommunicate, SendData) {
-  using namespace fish_protocol;  // NOLINT
+  using namespace fish_protocol; // NOLINT
   ProtocolConfig proto_config;
   proto_config.protocol_type_ = PROTOCOL_TYPE::SERIAL;
   proto_config.serial_baut_ = 115200;

@@ -54,17 +54,17 @@ target_link_libraries(${PROJECT_NAME}_test
 )
 
 # 代码格式检查
-# set(CPPLINT_SRC ${FISH_PROTOCOL_SRC} ${FISH_PROTOCOL_TESTS})
-# list(REMOVE_DUPLICATES CPPLINT_SRC)
-# foreach(v ${CPPLINT_SRC})
-#   execute_process(
-#     COMMAND cpplint --quiet ${v}
-#     ERROR_VARIABLE _result
-#   )
-#   if( _result)
-#     message(FATAL "cpplint check failed!  \n ${_result}")
-#   endif()
-# endforeach(v)
+set(CPPLINT_SRC ${FISH_PROTOCOL_SRC} ${FISH_PROTOCOL_TESTS})
+list(REMOVE_DUPLICATES CPPLINT_SRC)
+foreach(v ${CPPLINT_SRC})
+  execute_process(
+    COMMAND cpplint --quiet ${v}
+    ERROR_VARIABLE _result
+  )
+  if( _result)
+    message(FATAL "cpplint check failed!  \n ${_result}")
+  endif()
+endforeach(v)
 
 endif()
 

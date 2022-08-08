@@ -108,3 +108,9 @@ int main(int argc, char** argv) {
 sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
 sudo ldconfig
 ```
+
+## 更新日志
+
+- *20220807*
+  添加UDPCLIENT协议支持
+
