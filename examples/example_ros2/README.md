@@ -3,7 +3,7 @@
 1.创建功能包
 
 ```
-ros2 pkg create example_fish_protocol --dependencies rclcpp fish_deploy --node-name example_fish_protocol --maintainer-name fishros
+ros2 pkg create example_fish_protocol --dependencies rclcpp fish_protocol --node-name example_fish_protocol --maintainer-name fishros
 ```
 
 2.编译
