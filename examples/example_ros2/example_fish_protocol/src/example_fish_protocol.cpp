@@ -21,11 +21,12 @@ int main(int argc, char** argv) {
   protocol->SetDataRecvCallback([](const std::string& data) -> void {
     std::cout << "recv" << data << std::endl;
   });
-  // 销毁
-  protocol->ProtocolDestory();
 
   /* 运行节点，并检测退出信号 Ctrl+C*/
   rclcpp::spin(node);
+  
+  // 销毁
+  protocol->ProtocolDestory();
   /* 停止运行 */
   rclcpp::shutdown();
   return 0;

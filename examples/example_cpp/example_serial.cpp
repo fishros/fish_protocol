@@ -4,7 +4,7 @@ int main(int argc, char const* argv[]) {
   fish_protocol::ProtocolConfig proto_config;
   proto_config.protocol_type_ = fish_protocol::PROTOCOL_TYPE::SERIAL;
   proto_config.serial_baut_ = 115200;
-  proto_config.serial_address_ = "/dev/ttyS12";
+  proto_config.serial_address_ = "/dev/ttyUSB0";
 
   // 初始化
   auto protocol = GetProtocolByConfig(proto_config);

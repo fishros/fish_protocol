@@ -27,10 +27,13 @@ void UdpClientProtocol::_recvDataCallback(
   if (bytes_transferred > 0) {
     std::string data_str(recv_data_buffer_, bytes_transferred);
     // 回调数据
-    printf("recv data %ld\n", bytes_transferred);
-    recv_data_callback_(data_str);
-    printf("%s,%d\n", remote_endpoint_.address().to_v4().to_string().c_str(),
-           remote_endpoint_.port());
+    // printf("recv data %ld\n", bytes_transferred);
+    if (recv_data_callback_) {
+      // 回调数据
+      recv_data_callback_(data_str);
+    }
+    // printf("%s,%d\n", remote_endpoint_.address().to_v4().to_string().c_str(),
+    //        remote_endpoint_.port());
   }
   _asyncReadSomeData();
 }

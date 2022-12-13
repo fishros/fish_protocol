@@ -28,7 +28,10 @@ void UdpServerProtocol::_recvDataCallback(
     std::string data_str(recv_data_buffer_, bytes_transferred);
     // 回调数据
     // printf("recv data %ld\n", bytes_transferred);
-    recv_data_callback_(data_str);
+    if (recv_data_callback_) {
+      // 回调数据
+      recv_data_callback_(data_str);
+    }
     // printf("%s,%d\n", remote_endpoint_.address().to_v4().to_string().c_str(),
     //        remote_endpoint_.port());
   }
@@ -43,8 +46,8 @@ void UdpServerProtocol::_asyncReadSomeData() {
 }
 
 int UdpServerProtocol::ProtocolSendRawData(const std::string& data) {
-  std::cout << "send" << data.size() << std::endl;
-  print_frame_to_hex("send", data.data(), data.size());
+  // std::cout << "send" << data.size() << std::endl;
+  // print_frame_to_hex("send", data.data(), data.size());
   if (remote_endpoint_.port() != 0) {
     int send_len = socket_.send_to(boost::asio::buffer(data), remote_endpoint_);
     return send_len;
